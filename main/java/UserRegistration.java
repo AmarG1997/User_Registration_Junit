@@ -42,4 +42,14 @@ public class UserRegistration {
         else
             return "Invalid";
     }
+
+
+    public String password(String password) {
+        String passwordPattern="[a-z]{8,}";
+        if (password.matches(passwordPattern))
+            return "Valid";
+        else
+            return "Invalid";
+
+    }
 }

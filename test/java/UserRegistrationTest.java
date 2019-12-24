@@ -82,4 +82,18 @@ public class UserRegistrationTest {
         String message=registration.mobileNo("8888325602");
         Assert.assertEquals("Invalid",message);
     }
+
+    @Test
+    public void whenPassword_whenContains8Char_shouldReturnValid() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.password("validpassword");
+        Assert.assertEquals("Valid",message);
+    }
+
+    @Test
+    public void whenPassword_whenNotContains8Char_shouldReturnInvalid() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.password("notval");
+        Assert.assertEquals("Invalid",message);
+    }
 }
