@@ -22,6 +22,26 @@ public class UserRegistrationTest {
         String message=registration.firstName("amar");
         Assert.assertEquals("Invalid",message);
     }
+    @Test
+    public void whenGivenLastName_whenStartWithCap_shouldReturnMinimum3Character_shouldReturnValid() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.lastName("Abcd");
+        Assert.assertEquals("Valid",message);
+    }
+
+    @Test
+    public void whenGivenLastName_whenStartWithCap_shouldReturn2character_shouldReturnInvalid() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.lastName("Xy");
+        Assert.assertEquals("Invalid",message);
+    }
+
+    @Test
+    public void whenGivenLastName_whenStartWithLowerCase_shouldReturnInvalid() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.lastName("abcd");
+        Assert.assertEquals("Invalid",message);
+    }
 
 
 }
