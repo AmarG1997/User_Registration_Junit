@@ -84,10 +84,17 @@ public class UserRegistrationTest {
     }
 
     @Test
+    public void whenPassword_whenContains8CharAnd1CamelCase_shouldReturnValid() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.password("validPasSwordD");
+        Assert.assertEquals("Valid",message);
+    }
+
+    @Test
     public void whenPassword_whenContains8Char_shouldReturnValid() {
         UserRegistration registration = new UserRegistration();
         String message=registration.password("validpassword");
-        Assert.assertEquals("Valid",message);
+        Assert.assertEquals("Invalid",message);
     }
 
     @Test
