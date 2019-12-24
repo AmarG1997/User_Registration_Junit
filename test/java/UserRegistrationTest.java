@@ -82,12 +82,18 @@ public class UserRegistrationTest {
         String message=registration.mobileNo("8888325602");
         Assert.assertEquals("Invalid",message);
     }
+    @Test
+    public void whenPassword_whenContains8charAnd1camelCaseAnd1numberAnd1Symbol() {
+        UserRegistration registration = new UserRegistration();
+        String message=registration.password("validPassWord@122@");
+        Assert.assertEquals("Valid",message);
+    }
 
     @Test
     public void whenPassword_whenContains8charAnd1camelCaseAnd1number() {
     UserRegistration registration = new UserRegistration();
     String message=registration.password("validPassWord122");
-    Assert.assertEquals("Valid",message);
+    Assert.assertEquals("Invalid",message);
     }
 
     @Test
