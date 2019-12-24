@@ -45,7 +45,7 @@ public class UserRegistration {
 
 
     public String password(String password) {
-        String passwordPattern="(?=.*[a-z])(?=.*[A-Z]).{8,}";
+        String passwordPattern="(?=.*[a-z])(?=.*[A-Z0-9]).{8,}";
         if (password.matches(passwordPattern))
             return "Valid";
         else
