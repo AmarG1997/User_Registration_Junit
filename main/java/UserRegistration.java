@@ -16,4 +16,30 @@ public class UserRegistration {
         else
             return "Invalid";
     }
+
+
+    public boolean emailIsValid(String emailIsValid) {
+        String pattern="^[a-zA-Z]+[.+-]?[a-zA-Z0-9]+[@][a-zA-Z]{3,}[.][a-z]{2,4}[.]?[a-zA-Z]*[.,]?$";
+        if (emailIsValid.matches(pattern))
+            return true;
+        else
+            return false;
+
+    }
+
+    public boolean emailIsInvalid(String emailIsInvalid) {
+        String pattern="^[a-zA-Z]+[.+-]?[a-zA-Z0-9]+[@][a-zA-Z]{3,}[.][a-z]{2,4}[.]?[a-zA-Z]*[.,]?$";
+        if (emailIsInvalid.matches(pattern))
+            return true;
+        else
+            return false;
+    }
+
+    public String mobileNo(String mobileNo) {
+        String mobileNoPattern="^[+][0-9]{1,3}[ ][0-9]{10}$";
+        if (mobileNo.matches(mobileNoPattern))
+            return "Valid";
+        else
+            return "Invalid";
+    }
 }
